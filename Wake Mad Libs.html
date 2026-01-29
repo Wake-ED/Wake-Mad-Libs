@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mad Libs Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      padding: 5px;
+      margin-top: 5px;
+      width: 200px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #story {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mad Libs Game</h1>
+  
+  <label>Enter an adjective:</label>
+  <input type="text" id="adjective1">
+  
+  <label>Enter a noun:</label>
+  <input type="text" id="noun1">
+  
+  <label>Enter an adjective:</label>
+  <input type="text" id="adjective2">
+  
+  <label>Enter a verb:</label>
+  <input type="text" id="verb1">
+  
+  <label>Enter an adjective:</label>
+  <input type="text" id="adjective3">
+  
+  <button onclick="generateStory()">Generate Story</button>
+  
+  <div id="story"></div>
+  
+  <script>
+    function generateStory() {
+      const adjective1 = document.getElementById("adjective1").value;
+      const noun1 = document.getElementById("noun1").value;
+      const adjective2 = document.getElementById("adjective2").value;
+      const verb1 = document.getElementById("verb1").value;
+      const adjective3 = document.getElementById("adjective3").value;
+      
+      const story = `
+        Today, I went to a ${adjective1} zoo.<br>
+        In an exhibit, I saw a ${noun1}.<br>
+        ${noun1} was ${adjective2} and ${verb1}.<br>
+        I was ${adjective3}!
+      `;
+      
+      document.getElementById("story").innerHTML = story;
+    }
+  </script>
+</body>
+</html>
